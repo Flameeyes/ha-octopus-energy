@@ -90,6 +90,10 @@ class OctopusEnergyTariffSensorEntity(CoordinatorEntity, SensorEntity):
         return rate
 
     @property
+    def unit_of_measurement(self) -> str:
+        return f"GBP/{ENERGY_KILO_WATT_HOUR}"
+
+    @property
     def device_info(self) -> Mapping[str, Any]:
         return {
             "identifiers": {(DOMAIN, self._mpan)},
