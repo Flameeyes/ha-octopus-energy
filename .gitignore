@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2021 The ha-octopus-energy Authors
+#
+# SPDX-License-Identifier: 0BSD
+
+*~
+*.pyc
+/*.egg-info/
+/.vscode/
+/build/
+/dist/
+/venv

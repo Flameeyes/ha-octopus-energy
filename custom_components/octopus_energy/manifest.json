@@ -1,0 +1,10 @@
+{
+    "domain": "octopus_energy",
+    "name": "Octopus Energy",
+    "config_flow": true,
+    "documentation": "https://github.com/Flameeyes/ha-octopus",
+    "issue_tracker": "https://github.com/Flameeyes/ha-octopus/issues",
+    "codeowners": ["@Flameeyes"],
+    "requirements": ["octopy-energy"],
+    "version": "1.0.0"
+}

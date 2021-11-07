@@ -1,0 +1,19 @@
+{
+    "config": {
+        "flow_title": "{username}",
+        "error": {
+            "already_configured": "[%key:common::config_flow::abort::already_configured_account%]",
+            "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "[%key:common::config_flow::data::api_key%]",
+                    "account_number": "Account Number"
+                },
+                "description": "You can find your API key under Personal Details → API access",
+                "title": "Add Octopus Energy Account"
+            }
+        }
+    }
+}
