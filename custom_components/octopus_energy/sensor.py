@@ -16,6 +16,7 @@ from homeassistant.const import (
     DEVICE_CLASS_ENERGY,
     DEVICE_CLASS_MONETARY,
     ENERGY_KILO_WATT_HOUR,
+    ENERGY_MEGA_WATT_HOUR,
 )
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -85,13 +86,13 @@ class OctopusEnergyTariffSensorEntity(CoordinatorEntity, SensorEntity):
 
     @property
     def native_value(self) -> float:
-        # We convert from GBp (pence) to GBP (Pound).
-        rate = self.tariff.rate / 100
-        return rate
+        # We report the value in GBP/MWh because it provides more resolution than the
+        # GBp/kWh that otherwise rounds down to zero.
+        return f"{self.tariff.rate * 1000:.2f}"
 
     @property
     def unit_of_measurement(self) -> str:
-        return f"GBP/{ENERGY_KILO_WATT_HOUR}"
+        return f"GBP/{ENERGY_MEGA_WATT_HOUR}"
 
     @property
     def device_info(self) -> Mapping[str, Any]:
