@@ -6,5 +6,6 @@
     "issue_tracker": "https://github.com/Flameeyes/ha-octopus/issues",
     "codeowners": ["@Flameeyes"],
     "requirements": ["octopy-energy"],
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "iot_class": "cloud_polling"
 }
