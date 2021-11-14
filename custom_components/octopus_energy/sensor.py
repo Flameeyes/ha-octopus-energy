@@ -88,7 +88,7 @@ class OctopusEnergyTariffSensorEntity(CoordinatorEntity, SensorEntity):
     def native_value(self) -> float:
         # We report the value in GBP/MWh because it provides more resolution than the
         # GBp/kWh that otherwise rounds down to zero.
-        return f"{self.tariff.rate * 1000:.2f}"
+        return f"{self.tariff.rate * 10:.2f}"
 
     @property
     def unit_of_measurement(self) -> str:
