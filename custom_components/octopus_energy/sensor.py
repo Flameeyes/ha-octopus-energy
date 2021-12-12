@@ -7,17 +7,12 @@ from datetime import timedelta
 from typing import Any, Mapping
 
 from homeassistant.components.sensor import (
-    STATE_CLASS_MEASUREMENT,
-    STATE_CLASS_TOTAL_INCREASING,
+    SensorDeviceClass,
     SensorEntity,
+    SensorStateClass,
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
-    DEVICE_CLASS_ENERGY,
-    DEVICE_CLASS_MONETARY,
-    ENERGY_KILO_WATT_HOUR,
-    ENERGY_MEGA_WATT_HOUR,
-)
+from homeassistant.const import ENERGY_KILO_WATT_HOUR, ENERGY_MEGA_WATT_HOUR
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import (
@@ -63,8 +58,8 @@ async def async_setup_entry(
 
 class OctopusEnergyTariffSensorEntity(CoordinatorEntity, SensorEntity):
 
-    _attr_device_class = DEVICE_CLASS_MONETARY
-    _attr_state_class = STATE_CLASS_MEASUREMENT
+    _attr_device_class = SensorDeviceClass.MONETARY
+    _attr_state_class = SensorStateClass.MEASUREMENT
 
     _mpan: str
 
@@ -104,8 +99,8 @@ class OctopusEnergyTariffSensorEntity(CoordinatorEntity, SensorEntity):
 
 class OctopusEnergyConsumptionSensorEntity(CoordinatorEntity, SensorEntity):
 
-    _attr_device_class = DEVICE_CLASS_ENERGY
-    _attr_state_class = STATE_CLASS_TOTAL_INCREASING
+    _attr_device_class = SensorDeviceClass.ENERGY
+    _attr_state_class = SensorStateClass.TOTAL_INCREASING
     _attr_native_unit_of_measurement = ENERGY_KILO_WATT_HOUR
 
     _mpan: str

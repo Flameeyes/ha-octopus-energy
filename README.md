@@ -8,6 +8,8 @@ SPDX-License-Identifier: Apache-2.0
 
 This is a very _very_ rough implementation at the time of writing. Pull requests welcome.
 
+**Minimum supported version of Home Assistant is 2021.12.**
+
 This integration provides the ability to request [Octopus Energy](https://share.octopus.energy/wheat-ram-24)
 for consumption and tariff information for electricity meter points.
 
